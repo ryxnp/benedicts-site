@@ -50,7 +50,8 @@ if(isset($_GET['logout'])){
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="adminhome.php">Home</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="admin.php">User Maintenance</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#accounts">Accounts</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#bookings">Bookings</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="home.php">User Panel</a></li>
             <!--        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="services.php">File Maintenance</a></li>   -->
                         
@@ -62,9 +63,10 @@ if(isset($_GET['logout'])){
         <!-- Users Table Section-->
         <header>
         
-            <div class="container1 mb-0">
+            <div class="container1" id="accounts">
                 
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
+                        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Registered Accounts</h2>
                         <table class="table table-bordered"> 
                             <thead> 
                                 <tr> 
@@ -94,6 +96,44 @@ if(isset($_GET['logout'])){
                                 echo "<td>"; echo $row["contact"]; echo "</td>";
                                 echo "<td>"; ?> <a href="edit.php?id=<?php echo $row["id"]; ?>" <button type="button"  class="btn-success">Edit</button></a> <?php echo "</td>"; 
                                 echo "<td>"; ?> <a href="delete.php?id=<?php echo $row["id"]; ?>" <button type="button" class="btn-danger">Delete</button></a> <?php echo "</td>";
+                                echo "</tr>"; 
+                                } 
+                                ?> 
+                            </tbody> 
+                        </table>
+                    </div>
+            </div>
+
+            <div class="container1" id="bookings">
+                    <div class="col-lg-10">
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Bookings</h2>
+                        <table class="table table-bordered"> 
+                            <thead> 
+                                <tr> 
+                                    <th>Id</th>
+                                    <th>Complete Name</th> 
+                                    <th>Address</th>
+                                    <th>Contact</th>
+                                    <th>Date</th> 
+                                    <th>Time</th> 
+                                    <th>Service</th>
+                                    <th>Delete</th> 
+                                </tr> 
+                            </thead> 
+                            <tbody> 
+                                <?php 
+                                $res=mysqli_query($conn,"select * from booking"); 
+                                while($row=mysqli_fetch_array($res)) 
+                                { 
+                                echo "<tr>"; 
+                                echo "<td>"; echo $row["id"]; echo "</td>"; 
+                                echo "<td>"; echo $row["completename"]; echo "</td>"; 
+                                echo "<td>"; echo $row["address"]; echo "</td>";
+                                echo "<td>"; echo $row["contact"]; echo "</td>";
+                                echo "<td>"; echo $row["date"]; echo "</td>";
+                                echo "<td>"; echo $row["time"]; echo "</td>"; 
+                                echo "<td>"; echo $row["service"]; echo "</td>"; 
+                                echo "<td>"; ?> <a href="deletebookings.php?id=<?php echo $row["id"]; ?>" <button type="button" class="btn-danger">Delete</button></a> <?php echo "</td>";
                                 echo "</tr>"; 
                                 } 
                                 ?> 
