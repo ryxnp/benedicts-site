@@ -69,8 +69,6 @@
                                       <div class="slider-btn">
                                         <button onclick="document.location='signup.php'" type="button" class="btn  btn-light btn-lg">Sign Up</button>
                                         <button onclick="document.location='login.php'" type="button" class="btn  btn-light btn-lg">Login</button>
-                                        <button onclick="document.location='adminlogin.php'" type="button" class="btn  btn-light btn-lg">Admin Login</button>
-                                        
                                       </div>            
                      </div>
                   </div>
@@ -88,8 +86,7 @@
                                       <div class="slider-btn">
                                         <button onclick="document.location='signup.php'" type="button" class="btn  btn-light btn-lg">Sign Up</button>
                                         <button onclick="document.location='login.php'" type="button" class="btn  btn-light btn-lg">Login</button>
-                                        <button onclick="document.location='adminlogin.php'" type="button" class="btn  btn-light btn-lg">Admin Login</button>
-                                      </div>            
+                                      </div>               
                     </div>
                   </div>
                   <div class="carousel-item">
@@ -107,9 +104,7 @@
                                       <div class="slider-btn">
                                         <button onclick="document.location='signup.php'" type="button" class="btn  btn-light btn-lg">Sign Up</button>
                                         <button onclick="document.location='login.php'" type="button" class="btn  btn-light btn-lg">Login</button>
-                                        <button onclick="document.location='adminlogin.php'" type="button" class="btn  btn-light btn-lg">Admin Login</button>
-                                    
-                                      </div>                    
+                                      </div>                       
                     </div>
                   </div>
                 </div>
@@ -140,7 +135,10 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Detailing</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/cardetailing.jpg" alt="..." />
                         </div>
@@ -149,7 +147,10 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Engine Tuning</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carengine.jpg" alt="..." />
                         </div>
@@ -158,7 +159,10 @@
                     <div class="col-md-6 col-lg-4 mb-3">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Exterior Services</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carexterior.jpg" alt="..." />
                         </div>
@@ -167,7 +171,10 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Interior Services</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carinterior.jpg" alt="..." />
                         </div>
@@ -176,7 +183,10 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Maintenance</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carmaintenance.jpg" alt="..." />
                         </div>
