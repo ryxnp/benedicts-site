@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#page-top">Home</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="admin.php">User Maintenance</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="admin.php">Admin Panel</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="home.php">User Panel</a></li>
             <!--        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="services.php">File Maintenance</a></li>   -->
                         
@@ -66,7 +66,7 @@
 
                                     <p>Car Repair Shop - Fast Service</p>
                                     <div class="slider-btn">
-                                    <button onclick="document.location='home.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
+                                    <button onclick="document.location='booking.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
                                     </div>            
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     <h5>BENEDICTS AUTO REPAIR SHOP</h5>
                                     <p>Car Repair Shop - Fast Service</p>
                                     <div class="slider-btn">
-                                        <button onclick="document.location='home.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
+                                        <button onclick="document.location='booking.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
                                     </div>            
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                     <h5>BENEDICTS AUTO REPAIR SHOP</h5>
                                         <p>Car Repair Shop - Fast Service</p>
                                         <div class="slider-btn">
-                                        <button onclick="document.location='home.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
+                                        <button onclick="document.location='booking.php'" type="button" class="btn  btn-light btn-lg">Book Now</button>
                                         </div>                    
                     </div>
                     </div>
@@ -130,7 +130,10 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Detailing</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/cardetailing.jpg" alt="..." />
                         </div>
@@ -139,7 +142,10 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Engine Tuning</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carengine.jpg" alt="..." />
                         </div>
@@ -148,7 +154,10 @@
                     <div class="col-md-6 col-lg-4 mb-3">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Exterior Services</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carexterior.jpg" alt="..." />
                         </div>
@@ -157,7 +166,10 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-lg-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Interior Services</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carinterior.jpg" alt="..." />
                         </div>
@@ -166,7 +178,10 @@
                     <div class="col-md-6 col-lg-4 mb-5 mb-md-4">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <h2 class="page-section-heading text-center text-lowercase text-secondary mb-0">Maintenance</h2>
+                                    <p class="h5">Click for more information!</p>
+                                </div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/carmaintenance.jpg" alt="..." />
                         </div>
