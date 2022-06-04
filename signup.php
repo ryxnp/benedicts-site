@@ -4,36 +4,36 @@ include 'connection.php';
 
 if(isset($_POST['submit'])){
 
-   $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
-   $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
-   $username = mysqli_real_escape_string($conn, $_POST['username']);
-   $password = mysqli_real_escape_string($conn, md5($_POST['password']));
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $contact = mysqli_real_escape_string($conn, $_POST['contact']);
-   $image = $_FILES['image']['name'];
-   $image_size = $_FILES['image']['size'];
-   $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = 'uploaded_img/'.$image;
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, md5($_POST['password']));
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $contact = mysqli_real_escape_string($conn, $_POST['contact']);
+    $image = $_FILES['image']['name'];
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = 'uploaded_img/'.$image;
 
    $select = mysqli_query($conn, "SELECT * FROM `users` WHERE username = '$username' AND password = '$password'") or die('query failed');
 
-   if(mysqli_num_rows($select) > 0){
-      $message[] = 'User already exist'; 
-   }else{
-      if($image_size > 2000000){
-         $message[] = 'image size is too large!';
-      }else{
-         $insert = mysqli_query($conn, "INSERT INTO `users`(firstname,lastname,username, password, email, contact, image) VALUES('$firstname','$lastname','$username','$password','$email',$contact, '$image')") or die('query failed');
+    if(mysqli_num_rows($select) > 0){
+        $message[] = 'User already exist'; 
+    }else{
+        if($image_size > 2000000){
+            $message[] = 'image size is too large!';
+        }else{
+            $insert = mysqli_query($conn, "INSERT INTO `users`(firstname,lastname,username, password, email, contact, image) VALUES('$firstname','$lastname','$username','$password','$email',$contact, '$image')") or die('query failed');
 
-         if($insert){
-            move_uploaded_file($image_tmp_name, $image_folder);
-            $message[] = 'Registered successfully!';
-            header('location:login.php');
-         }else{
-            $message[] = 'Registeration failed!';
-         }
-      }
-   }
+            if($insert){
+                move_uploaded_file($image_tmp_name, $image_folder);
+                $message[] = 'Registered successfully!';
+                header('location:login.php');
+            }else{
+                $message[] = 'Registeration failed!';
+            }
+        }
+    }
 
 }
 
@@ -63,25 +63,21 @@ if(isset($_POST['submit'])){
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-   
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="landing.php">
                     <img src="materials/logo2.png" width="60" height="35" alt="logo">
-                  BENEDICTS</a>
+                    BENEDICTS</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                   
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="landing.php">Home</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                      
-                        
                     </ul>
                 </div>
             </div>
@@ -89,16 +85,16 @@ if(isset($_POST['submit'])){
         <!--Signup-->
         <header>
             <section class="bg">
-          <div class="container">
-              <div class="row d-flex justify-content-center">
-                  <div class="col-md-4">
-                      <div class="form-wrap">
-                          <div class="form-heading">
-                              <h1>Create new account</h1>
-                              <p>Enter your Personal Data</p>
-                          </div>
-                          <form method= "post" action="" name="regForm" enctype="multipart/form-data" id="regForm">
-                          <?php
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">
+                    <div class="form-wrap">
+                        <div class="form-heading">
+                            <h1>Create new account</h1>
+                            <p>Enter your Personal Data</p>
+                        </div>
+                        <form method= "post" action="" name="regForm" enctype="multipart/form-data" id="regForm">
+                        <?php
                                 if(isset($message)){
                                     foreach($message as $message){
                                         echo '<div class="message">'.$message.'</div>';
@@ -106,34 +102,37 @@ if(isset($_POST['submit'])){
                                 }
                             ?>
                             <div class="form-group">
-                                <label>First Name: </label>
-                                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter your Name">
+                                <p class="text-center">All fields marked with * are required</p>
+                            </div>
+                            <div class="form-group">
+                                <label>*First Name: </label>
+                                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter your Name" required>
                                 <p id="p1"></p>
                             </div>
                             <div class="form-group">
-                                <label>Last Name: </label>
-                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter your Name">
+                                <label>*Last Name: </label>
+                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter your Name" required>
                                 <p id="p2"></p>
                             </div>
                             <div class="form-group">
-                                  <label>Username: </label>
-                                  <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-                                  <p id="p3"></p>
-                              </div>
-                              <div class="form-group">
-                                  <label>Password: </label>
-                                  <input type="password" name="password"class="form-control" id="password" placeholder="Password">
-                                  <p id="p4"></p>
-                              </div>
+                                <label>*Username: </label>
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+                                <p id="p3"></p>
+                            </div>
                             <div class="form-group">
-                                <label>Email: </label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Email Address">
+                                <label>*Password: </label>
+                                <input type="password" name="password"class="form-control" id="password" placeholder="Password" required>
+                                <p id="p4"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>*Email: </label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" required>
                                 <p id="p5"></p>
                             </div>
 
-                              <div class="form-group">
-                                <label>Contact: </label>
-                                <input type="text" name="contact"class="form-control" id="contact"  placeholder="Phone Number">
+                            <div class="form-group">
+                                <label>*Contact: </label>
+                                <input type="text" name="contact"class="form-control" id="contact"  placeholder="Phone Number" required>
                                 <p id="p6"></p>
                             </div>
 
@@ -142,27 +141,31 @@ if(isset($_POST['submit'])){
                                 <input type="file" name="image"class="box" id="image"  accept ="image/jpg,image/jpeg,image/png">
                                 <p id="p6"></p>
                             </div>
-                        
-                              <div class="form-group">
-                          
-                                  <input type="submit" name="submit" value="Sign up" class="btn btn3 btn-primary btn-block" id="submit">
-                                  
-                              </div>
-                              <div class="signup_link">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    I have read, understand and agree to Benedict's Repair Shop's <a href="privacypolicy.php"> Privacy Policy </a> and <a href="privacypolicy.php">Terms of Service</a>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <input type="submit" name="submit" value="Sign up" class="btn btn3 btn-primary btn-block" id="submit">
+                                </div>
+                            </div>
+
+                            <div class="signup_link">
                                 Already have an account? <a href="login.php">Login</a>
-                              </div>
-                              
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      </header>
-      
-       
-       
-      
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
@@ -182,8 +185,7 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
         </section>
-        
-  
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
